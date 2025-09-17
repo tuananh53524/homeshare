@@ -1,0 +1,37 @@
+/* Hiệu ứng chuyển màu mượt mà cho text, background, border, transform */
+.transition-base {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Hiệu ứng chuyển màu hover cho text */
+.transition-color {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* Hiệu ứng chuyển đổi transform (slide, scale, v.v.) */
+.transition-transform {
+  @apply transition-transform duration-500 ease-in-out;
+}
+
+/* Hiệu ứng overlay fade-in/out */
+.transition-opacity {
+  @apply transition-opacity duration-300 ease-in-out;
+}
+
+/* Hiệu ứng underline grow từ trái sang phải khi hover */
+.underline-animate {
+  position: relative;
+}
+.underline-animate::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #171717;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.underline-animate:hover::after {
+  width: 100%;
+}
